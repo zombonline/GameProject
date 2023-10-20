@@ -10,6 +10,340 @@ function setup()
 	createCanvas(400, 600);
 }
 
+function drawStandingFrontFacing() {
+//feet 
+    stroke(0);
+    fill(214,85,99);
+    ellipse(gameChar_x-10, gameChar_y-2.5,10,5);
+    ellipse(gameChar_x+10, gameChar_y-2.5,10,5);
+    
+//wings
+    stroke(0);
+    fill(255);
+    
+//left wing
+    var wingPosX = gameChar_x-20;
+    var wingPosY = gameChar_y - 30;
+    beginShape();
+    vertex(wingPosX-7.5, wingPosY-7.5); 
+    vertex(wingPosX+7.5,wingPosY) 
+    curveVertex(wingPosX-2.5,wingPosY+5);
+    endShape(CLOSE);
+    line(wingPosX, wingPosY-1,wingPosX-2,wingPosY+2);
+//right wing
+    var wingPosX = gameChar_x+20;
+    var wingPosY = gameChar_y - 30;
+    beginShape();
+    vertex(wingPosX+7.5, wingPosY-7.5); 
+    vertex(wingPosX-7.5,wingPosY) 
+    curveVertex(wingPosX+2.5,wingPosY+5);
+    endShape(CLOSE);
+    line(wingPosX, wingPosY-1,wingPosX+2,wingPosY+2);
+    
+//main body
+    stroke(0);
+    fill(99,155,255);
+    ellipse(gameChar_x, gameChar_y-20,40,40);
+    
+//mouth
+    noStroke();
+    fill(0);
+    arc(gameChar_x, gameChar_y-26.5, 20, 20, 0, PI );
+    
+//eyes
+    noStroke();
+    fill(0);
+    ellipse(gameChar_x-10, gameChar_y-30,3,3);
+    ellipse(gameChar_x+10, gameChar_y-30,3,3);
+    
+//eye hilights
+    noStroke();
+    fill(255);
+    ellipse(gameChar_x-10.5, gameChar_y-30.5,1.5,1.5);
+    ellipse(gameChar_x+10.5, gameChar_y-30.5,1.5,1.5);
+}
+function drawJumpingFrontFacing() {
+//feet 
+    stroke(0);
+    fill(214,85,99);
+    ellipse(gameChar_x-10, gameChar_y-2.5,5,10);
+    ellipse(gameChar_x+10, gameChar_y-2.5,5,10);
+    
+//wings
+    stroke(0);
+    fill(255);
+//left wing
+    var wingPosX = gameChar_x-20;
+    var wingPosY = gameChar_y - 30;
+    beginShape();
+    vertex(wingPosX-7.5, wingPosY+7.5); 
+    vertex(wingPosX+7.5,wingPosY) 
+    curveVertex(wingPosX-2.5,wingPosY-5);
+    endShape(CLOSE);
+    line(wingPosX, wingPosY-1,wingPosX-2,wingPosY+2);
+//right wing
+    var wingPosX = gameChar_x+20;
+    var wingPosY = gameChar_y - 30;
+    beginShape();
+    vertex(wingPosX+7.5, wingPosY+7.5); 
+    vertex(wingPosX-7.5,wingPosY) 
+    curveVertex(wingPosX+2.5,wingPosY-5);
+    endShape(CLOSE);
+    line(wingPosX, wingPosY-1,wingPosX+2,wingPosY+2);
+
+//main body
+    stroke(0);
+    fill(99,155,255);
+    ellipse(gameChar_x, gameChar_y-20,40,40);
+    
+//mouth
+    noStroke();
+    fill(0);
+    arc(gameChar_x, gameChar_y-26.5, 20, 20, 0, PI );
+
+//eyes
+    noStroke();
+    fill(0);
+    ellipse(gameChar_x-10, gameChar_y-30,3,3);
+    ellipse(gameChar_x+10, gameChar_y-30,3,3);
+    
+//eye hilights
+    noStroke();
+    fill(255);
+    ellipse(gameChar_x-10.5, gameChar_y-30.5,1.5,1.5);
+    ellipse(gameChar_x+10.5, gameChar_y-30.5,1.5,1.5);
+}
+function drawWalkingLeft() {
+//back foot 
+    stroke(0);
+    fill(214,85,99); 
+    ellipse(gameChar_x-10, gameChar_y-2.5,10,5);
+
+//main body
+    stroke(0);
+    fill(99,155,255);
+    ellipse(gameChar_x, gameChar_y-20,40,40);
+    
+//front foot
+    fill(214,85,99);
+    ellipse(gameChar_x-1, gameChar_y-3.5,10,5);
+    
+//wings
+    stroke(0);
+    fill(255);
+//left wing
+    var wingPosX = gameChar_x+5;
+    var wingPosY = gameChar_y - 30;
+    beginShape();
+    vertex(wingPosX+7.5, wingPosY-7.5); 
+    vertex(wingPosX-7.5,wingPosY) 
+    curveVertex(wingPosX+2.5,wingPosY+5);
+    endShape(CLOSE);
+    line(wingPosX, wingPosY-1,wingPosX+2,wingPosY+2);
+    
+//mouth
+    noStroke();
+    fill(0);
+    beginShape()
+    vertex(gameChar_x-5, gameChar_y-27)
+    vertex(gameChar_x-5, gameChar_y-25)
+    vertex(gameChar_x-6, gameChar_y-22)
+    vertex(gameChar_x-8, gameChar_y-20)
+    vertex(gameChar_x-11, gameChar_y-18)
+    vertex(gameChar_x-15, gameChar_y-17)
+    vertex(gameChar_x-18, gameChar_y-17)
+    vertex(gameChar_x-20, gameChar_y-18)
+    vertex(gameChar_x-20, gameChar_y-21)
+    vertex(gameChar_x-19, gameChar_y-24)
+    vertex(gameChar_x-19, gameChar_y-27)
+    vertex(gameChar_x-17, gameChar_y-27)
+    endShape(CLOSE);
+    
+//eye
+    noStroke();
+    fill(0);
+    ellipse(gameChar_x-10, gameChar_y-30,3,3);
+
+//eye hilight
+    noStroke();
+    fill(255);
+    ellipse(gameChar_x-9.75, gameChar_y-30.5,1.5,1.5);
+}
+function drawWalkingRight() {
+//back foot 
+    stroke(0);
+    fill(214,85,99);
+    ellipse(gameChar_x+10, gameChar_y-2.5,10,5);
+    
+//main body
+    stroke(0);
+    fill(99,155,255);
+    ellipse(gameChar_x, gameChar_y-20,40,40);
+    
+//front foot
+    fill(214,85,99);
+    ellipse(gameChar_x+1, gameChar_y-3.5,10,5);
+    
+//wings
+    stroke(0);
+    fill(255);
+//right wing
+    var wingPosX = gameChar_x-5;
+    var wingPosY = gameChar_y - 30;
+    beginShape();
+    vertex(wingPosX-7.5, wingPosY-7.5); 
+    vertex(wingPosX+7.5,wingPosY) 
+    curveVertex(wingPosX-2.5,wingPosY+5);
+    endShape(CLOSE);
+    line(wingPosX, wingPosY-1,wingPosX-2,wingPosY+2);
+    
+//mouth
+    noStroke();
+    fill(0);
+    beginShape()
+    vertex(gameChar_x+5, gameChar_y-27)
+    vertex(gameChar_x+5, gameChar_y-25)
+    vertex(gameChar_x+6, gameChar_y-22)
+    vertex(gameChar_x+8, gameChar_y-20)
+    vertex(gameChar_x+11, gameChar_y-18)
+    vertex(gameChar_x+15, gameChar_y-17)
+    vertex(gameChar_x+18, gameChar_y-17)
+    vertex(gameChar_x+20, gameChar_y-18)
+    vertex(gameChar_x+20, gameChar_y-21)
+    vertex(gameChar_x+19, gameChar_y-24)
+    vertex(gameChar_x+19, gameChar_y-27)
+    vertex(gameChar_x+17, gameChar_y-27)
+    endShape(CLOSE);
+    
+//eye
+    noStroke();
+    fill(0);
+    ellipse(gameChar_x+10, gameChar_y-30,3,3);
+    
+//eye hilight
+    noStroke();
+    fill(255);
+    ellipse(gameChar_x+9.75, gameChar_y-30.5,1.5,1.5);
+}
+function drawJumpingLeft() {
+    //back foot 
+    stroke(0);
+    fill(214,85,99);
+    
+    ellipse(gameChar_x-10, gameChar_y-2.5,5,10);
+    
+    //main body
+    stroke(0);
+    fill(99,155,255);
+    
+    ellipse(gameChar_x, gameChar_y-20,40,40);
+    
+    //front foot
+    fill(214,85,99);
+    ellipse(gameChar_x-1, gameChar_y-3.5,5,10);
+    
+    //wings
+    stroke(0);
+    fill(255);
+    
+   //left wing
+    var wingPosX = gameChar_x+5;
+    var wingPosY = gameChar_y - 30;
+    beginShape();
+    vertex(wingPosX-7.5, wingPosY+7.5); 
+    vertex(wingPosX+7.5,wingPosY) 
+    curveVertex(wingPosX-2.5,wingPosY-5);
+    endShape(CLOSE);
+    line(wingPosX, wingPosY-1,wingPosX-2,wingPosY+2);
+    
+    //mouth
+    noStroke();
+    fill(0);
+    
+    //arc(gameChar_x+15, gameChar_y-26.5, 20, 20, 0, PI );
+    beginShape()
+    vertex(gameChar_x-5, gameChar_y-27)
+    vertex(gameChar_x-5, gameChar_y-25)
+    vertex(gameChar_x-6, gameChar_y-22)
+    vertex(gameChar_x-8, gameChar_y-20)
+    vertex(gameChar_x-11, gameChar_y-18)
+    vertex(gameChar_x-15, gameChar_y-17)
+    vertex(gameChar_x-18, gameChar_y-17)
+    vertex(gameChar_x-20, gameChar_y-18)
+    vertex(gameChar_x-20, gameChar_y-21)
+    vertex(gameChar_x-19, gameChar_y-24)
+    vertex(gameChar_x-19, gameChar_y-27)
+    vertex(gameChar_x-17, gameChar_y-27)
+    endShape(CLOSE);
+    //eye
+    noStroke();
+    fill(0);
+    
+    ellipse(gameChar_x-10, gameChar_y-30,3,3);
+    
+    //eye hilight
+    noStroke();
+    fill(255);
+    
+    ellipse(gameChar_x-9.75, gameChar_y-30.5,1.5,1.5);
+}
+function drawJumpingRight() {
+//back foot 
+    stroke(0);
+    fill(214,85,99);
+    ellipse(gameChar_x+10, gameChar_y-2.5,5,10);
+    
+//main body
+    stroke(0);
+    fill(99,155,255);
+    ellipse(gameChar_x, gameChar_y-20,40,40);
+    
+//front foot
+    fill(214,85,99);
+    ellipse(gameChar_x+1, gameChar_y-3.5,5,10);
+    
+//wings
+    stroke(0);
+    fill(255);
+//right wing
+    var wingPosX = gameChar_x-5;
+    var wingPosY = gameChar_y - 30;
+    beginShape();
+    vertex(wingPosX+7.5, wingPosY+7.5); 
+    vertex(wingPosX-7.5,wingPosY) 
+    curveVertex(wingPosX+2.5,wingPosY-5);
+    endShape(CLOSE);
+    line(wingPosX, wingPosY-1,wingPosX+2,wingPosY+2);
+    
+//mouth
+    noStroke();
+    fill(0);
+    beginShape()
+    vertex(gameChar_x+5, gameChar_y-27)
+    vertex(gameChar_x+5, gameChar_y-25)
+    vertex(gameChar_x+6, gameChar_y-22)
+    vertex(gameChar_x+8, gameChar_y-20)
+    vertex(gameChar_x+11, gameChar_y-18)
+    vertex(gameChar_x+15, gameChar_y-17)
+    vertex(gameChar_x+18, gameChar_y-17)
+    vertex(gameChar_x+20, gameChar_y-18)
+    vertex(gameChar_x+20, gameChar_y-21)
+    vertex(gameChar_x+19, gameChar_y-24)
+    vertex(gameChar_x+19, gameChar_y-27)
+    vertex(gameChar_x+17, gameChar_y-27)
+    endShape(CLOSE);
+    
+//eye
+    noStroke();
+    fill(0);
+    ellipse(gameChar_x+10, gameChar_y-30,3,3);
+    
+//eye hilight
+    noStroke();
+    fill(255);
+    ellipse(gameChar_x+9.75, gameChar_y-30.5,1.5,1.5);
+}
+
 function draw()
 {
 	background(255);
@@ -26,77 +360,7 @@ function draw()
 	gameChar_x = 45;
 	gameChar_y = 137;
 	//Add your code here ...
-    //feet 
-    stroke(0);
-    fill(214,85,99);
-    ellipse(gameChar_x-10, gameChar_y-2.5,10,5);
-    ellipse(gameChar_x+10, gameChar_y-2.5,10,5);
-    noStroke();
-    //wings
-    stroke(0);
-    fill(255);
-    
-    var wingPosX = gameChar_x-20;
-    var wingPosY = gameChar_y - 30;
-    beginShape();
-    vertex(wingPosX-7.5, wingPosY-7.5); //red
-//    curveVertex(wingPosX, wingPosY-1);
-    vertex(wingPosX+7.5,wingPosY) //green
-    curveVertex(wingPosX-2.5,wingPosY+5);
-    endShape(CLOSE);
-    line(wingPosX, wingPosY-1,wingPosX-2,wingPosY+2);
-
-    var wingPosX = gameChar_x+20;
-    var wingPosY = gameChar_y - 30;
-    beginShape();
-    vertex(wingPosX+7.5, wingPosY-7.5); //red
-//    curveVertex(wingPosX, wingPosY-1);
-    vertex(wingPosX-7.5,wingPosY) //green
-    curveVertex(wingPosX+2.5,wingPosY+5);
-    endShape(CLOSE);
-    line(wingPosX, wingPosY-1,wingPosX+2,wingPosY+2);
-    
-    
-    noStroke();
-    //main body
-    stroke(0);
-    fill(99,155,255);
-    ellipse(gameChar_x, gameChar_y-20,40,40);
-    noStroke();
-    //mouth
-    fill(0);
-    ellipse(gameChar_x, gameChar_y-26.5,20,20);
-    fill(99,155,255);
-    rect(gameChar_x-10, gameChar_y-36.7,20,11.5);
-    
-    //eyes
-    fill(0);
-    ellipse(gameChar_x-10, gameChar_y-30,3,3);
-    ellipse(gameChar_x+10, gameChar_y-30,3,3);
-    //eye hilights
-    fill(255);
-    ellipse(gameChar_x-10.5, gameChar_y-30.5,1.5,1.5);
-    ellipse(gameChar_x+10.5, gameChar_y-30.5,1.5,1.5);
-    
-//    stroke(0);
-//    wingPosX = 100;
-//    wingPosY = 100;
-//    rect(wingPosX-12.5,wingPosY-12.5,25,25);
-//    
-//    fill(255,0,0);
-//    ellipse(wingPosX-7.5,wingPosY-7.5,5,5);
-//    fill(0,255,0);
-//    ellipse(wingPosX+7.5,wingPosY,5,5);
-//    fill(0,0,255);
-//    ellipse(wingPosX,wingPosY+5,5,5);
-//    fill(255);
-//    beginShape();
-//    vertex(wingPosX-7.5, wingPosY-7.5); //red
-//    curveVertex(wingPosX, wingPosY-1);
-//    vertex(wingPosX+7.5,wingPosY) //green
-//    curveVertex(wingPosX-2.5,wingPosY+5);
-//    
-//    endShape(CLOSE);
+    drawStandingFrontFacing();
 
 	//Jumping facing forwards
 	stroke(100);
@@ -105,10 +369,10 @@ function draw()
 	noStroke();
 	fill(0);
 	text("2. jumping facing forwards", 220, 160);
-
 	gameChar_x = 245;
 	gameChar_y = 137;
 	//Add your code here ...
+    drawJumpingFrontFacing();
 
 	//Walking, turned left
 	stroke(100);
@@ -121,7 +385,7 @@ function draw()
 	gameChar_x = 45;
 	gameChar_y = 337;
 	//Add your code here ...
-
+    drawWalkingLeft();
 
 	//Walking, turned right
 	stroke(100);
@@ -134,7 +398,7 @@ function draw()
 	gameChar_x = 245;
 	gameChar_y = 337;
 	//Add your code here ...
-
+drawWalkingRight();
 
 	//Jumping right
 	stroke(100);
@@ -147,7 +411,7 @@ function draw()
 	gameChar_x = 45;
 	gameChar_y = 537;
 	//Add your code here ...
-
+    drawJumpingRight();
 
 	//Jumping to the left
 	stroke(100);
@@ -160,7 +424,7 @@ function draw()
 	gameChar_x = 245;
 	gameChar_y = 537;
 	//Add your code here ...
-    
+    drawJumpingLeft();
     
     
     // a helpful mouse coordinate pointer
@@ -168,4 +432,8 @@ function draw()
     stroke(255);
     text(`${mouseX},${mouseY}`,mouseX, mouseY);
 
+}
+function mousePressed()
+{
+    console.log("vertex(" + mouseX + ", " + mouseY +")");
 }
